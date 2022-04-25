@@ -1,4 +1,4 @@
-CROMU_00008:
+CROMU_00008_1:
   cwd: "/usr/local/share/pyshared/cgc"
   script: "python2 /usr/local/share/pyshared/cgc/cb-test.py"
   path: "/usr/local/share/povs/expression_database"
