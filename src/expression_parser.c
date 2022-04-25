@@ -68,8 +68,15 @@ tItemStack cgc_pop_parser_stack( void )
 void cgc_push_parser_stack( tItemStack item )
 {
 
-    cgc_g_memoryGlobal.parseStack[cgc_g_parseStackSize] = item;
-    cgc_g_parseStackSize++;
+    if ( cgc_g_parseStackSize < MAX_PARSE_STACKSIZE )
+    {
+        cgc_g_memoryGlobal.parseStack[cgc_g_parseStackSize] = item;
+        cgc_g_parseStackSize++;
+    }
+    else
+    {
+        THROW( PARSER_EXCEPTION_OVERFLOW );
+    }
 }
 
 
